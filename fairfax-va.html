@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Coronavirus in San Mateo County, CA</title>
+    <title>Coronavirus in Fairfax County, VA</title>
     <link rel='icon' href='graphmagnifier_118081.ico' type='image/x-icon'/ >
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -20,19 +20,17 @@
       google.charts.setOnLoadCallback(drawChart);
       function drawChart() {
         var data = google.visualization.arrayToDataTable
-            ([['Day', 'Confirmed Cases (Total Positive Cases)', 'Deaths'],
-              ['Mar 10', 8, 0],
-              ['Mar 11', 14, 0],
-              ['Mar 12', 20, 0],
-              ['Mar 13', 20, 0],
-              ['Mar 14', 26, 0],
-              ['Mar 15', 32, 1],
-              ['Mar 16', 41, 1]
+            ([['Day', 'Total Presumptive Positive Cases', 'Deaths'],
+              ['Mar 12', 4, 0],
+              ['Mar 13', 6, 0],
+              ['Mar 14', 6, 0],
+              ['Mar 15', 10, 0],
+              ['Mar 16', 10, 0]
         ]);
 
         var options = {
           legend: 'none',
-          title: 'San Mateo County Confirmed Cases and Deaths',
+          title: 'Fairfax County Presumptive Positive Cases and Deaths',
           series: {
             0: { color: '#007bff' }
           },
@@ -51,16 +49,14 @@
 
           var data = google.visualization.arrayToDataTable([
             ['City', 'Day-over-Day Case Growth %', {type: 'string', role: 'annotation'}],
-            ['Mar 16', 28, '+28%'],
-            ['Mar 15', 23, '+23%'],
-            ['Mar 14', 30, '+30%'],
-            ['Mar 13', 0, '0%'],
-            ['Mar 12', 43, '+43%'],
-            ['Mar 11', 75, '+75%']
+            ['Mar 16', 0, '0%'],
+            ['Mar 15', 66.7, '+66.7%'],
+            ['Mar 14', 0, '0%'],
+            ['Mar 13', 50, '+50%']
           ]);
 
           var options = {
-           title: 'Growth Rate of San Mateo County Confirmed Cases',
+           title: 'Growth Rate of Fairfax County Presumptive Positive Cases',
            pointSize: 10,
            legend: 'none',
             series: {
@@ -122,7 +118,7 @@
   </head>
   <body class="body-style">
     <br><br>
-    <div class="body-headline">Coronavirus (COVID-19) in San Mateo County, CA</div>
+    <div class="body-headline">Coronavirus (COVID-19) in Fairfax County, VA</div>
 
     <div class="text-center">If the growth rate of cases <b>declines</b> over many days, it's a good sign that we're containing the virus.</div>
 
@@ -139,7 +135,7 @@
       </div>
     </div>
 
-    <div class="text-center">Updated 3/15/2020 12 pm by <a href="http://www.twitter.com/xianke">@xianke</a> from data at <a href="https://www.smchealth.org/coronavirus">https://www.smchealth.org/coronavirus</a>. Source code at <a href="https://github.com/xke/coronavirus-sf/">https://github.com/xke/coronavirus-sf/</a>.</div>
+    <div class="text-center">Updated 3/16/2020 4 pm by <a href="http://www.twitter.com/xianke">@xianke</a> from data at <a href="https://www.fairfaxcounty.gov/covid19/">https://www.fairfaxcounty.gov/covid19/</a>. Source code at <a href="https://github.com/xke/coronavirus-sf/">https://github.com/xke/coronavirus-sf/</a>.</div>
     <br><br><br>
 
    <a name="signup"></a>
