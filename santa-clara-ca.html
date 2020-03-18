@@ -3,6 +3,7 @@
   <head>
     <title>Coronavirus in Santa Clara County, CA</title>
     <link rel='icon' href='graphmagnifier_118081.ico' type='image/x-icon'/ >
+    <meta property="og:image" content="https://coronavirus-sf.now.sh/preview.png">
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-160706069-1"></script>
@@ -27,7 +28,9 @@
               ['Mar 13', 79, 2],
               ['Mar 14', 91, 2],
               ['Mar 15', 114, 2],
-              ['Mar 16', 138, 2]
+              ['Mar 16', 138, 4],
+              ['Mar 17', 155, 4]
+
         ]);
 
         var options = {
@@ -51,6 +54,7 @@
 
           var data = google.visualization.arrayToDataTable([
             ['City', 'Day-over-Day Case Growth %', {type: 'string', role: 'annotation'}],
+            ['Mar 17', 12.3, '+12.3%'],
             ['Mar 16', 21, '+21%'],
             ['Mar 15', 25.3, '+25.3%'],
             ['Mar 14', 15.2, '+15.2%'],
@@ -130,17 +134,17 @@
     <div class="container">
       <div class="row">
         <div class="col col-sm-auto">
-          <div id="growth_chart_div" style="align:center; width: 500px; height: 500px;"></div>
+          <div id="growth_chart_div" style="margin-left:-25px;align:center; width: 500px; height: 500px;"></div>
         </div>
         <div class="col col-lg-2">
-          <div id="chart_div" style="align:center; width: 800px; height: 500px;"></div>
+          <div id="chart_div" style="margin-left:-80px; align:center; width: 780px; height: 500px;"></div>
         </div>
 
       </div>
     </div>
 
 <!-- https://www.sccgov.org/sites/phd/DiseaseInformation/novel-coronavirus/Pages/home.aspx -->
-    <div class="text-center">Updated 3/16/2020 4 pm by <a href="http://www.twitter.com/xianke">@xianke</a> from data at <a href="https://www.sccgov.org/sites/phd/DiseaseInformation/novel-coronavirus/Pages/home.aspx">https://www.sccgov.org/sites/phd/DiseaseInformation/novel-coronavirus/Pages/home.aspx</a>. Source code at <a href="https://github.com/xke/coronavirus-sf/">https://github.com/xke/coronavirus-sf/</a>.</div>
+    <div class="text-center">Updated 3/17/2020 2 pm by <a href="http://www.twitter.com/xianke">@xianke</a> from data at <a href="https://www.sccgov.org/sites/phd/DiseaseInformation/novel-coronavirus/Pages/home.aspx">https://www.sccgov.org/sites/phd/DiseaseInformation/novel-coronavirus/Pages/home.aspx</a>. Source code at <a href="https://github.com/xke/coronavirus-sf/">https://github.com/xke/coronavirus-sf/</a>.</div>
     <br><br><br>
 
    <a name="signup"></a>

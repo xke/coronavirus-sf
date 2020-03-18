@@ -3,6 +3,7 @@
   <head>
     <title>Coronavirus in Alameda County, CA</title>
     <link rel='icon' href='graphmagnifier_118081.ico' type='image/x-icon'/ >
+    <meta property="og:image" content="https://coronavirus-sf.now.sh/preview.png">
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-160706069-1"></script>
@@ -26,7 +27,9 @@
               ['Mar 12', 9, 0],
               ['Mar 13', 9, 0],
               ['Mar 14', 10, 0],
-              ['Mar 15', 15, 0]
+              ['Mar 15', 15, 0],
+              ['Mar 16', 18, 0],
+              ['Mar 17', 27, 0]
         ]);
 
         var options = {
@@ -50,6 +53,8 @@
 
           var data = google.visualization.arrayToDataTable([
             ['City', 'Day-over-Day Case Growth %', {type: 'string', role: 'annotation'}],
+            ['Mar 17', 50, '+50%'],
+            ['Mar 16', 20, '+20%'],
             ['Mar 15', 50, '+50%'],
             ['Mar 14', 11, '+11%'],
             ['Mar 13', 0, '0%'],
@@ -128,16 +133,16 @@
     <div class="container">
       <div class="row">
         <div class="col col-sm-auto">
-          <div id="growth_chart_div" style="align:center; width: 500px; height: 500px;"></div>
+          <div id="growth_chart_div" style="margin-left:-15px;align:center; width: 500px; height: 500px;"></div>
         </div>
         <div class="col col-lg-2">
-          <div id="chart_div" style="align:center; width: 800px; height: 500px;"></div>
+          <div id="chart_div" style="margin-left:-110px; align:center; width: 800px; height: 500px;"></div>
         </div>
 
       </div>
     </div>
 
-    <div class="text-center">Updated 3/16/2020 10 am by <a href="http://www.twitter.com/xianke">@xianke</a> from data at <a href="http://www.acphd.org/2019-ncov.aspx">http://www.acphd.org/2019-ncov.aspx</a>. Source code at <a href="https://github.com/xke/coronavirus-sf/">https://github.com/xke/coronavirus-sf/</a>.</div>
+    <div class="text-center">Updated 3/17/2020 1 pm by <a href="http://www.twitter.com/xianke">@xianke</a> from data at <a href="http://www.acphd.org/2019-ncov.aspx">http://www.acphd.org/2019-ncov.aspx</a>. Source code at <a href="https://github.com/xke/coronavirus-sf/">https://github.com/xke/coronavirus-sf/</a>.</div>
     <br><br><br>
 
    <a name="signup"></a>
