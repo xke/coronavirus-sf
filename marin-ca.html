@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Coronavirus in Fairfax County, VA</title>
+    <title>Coronavirus in Marin County, CA</title>
     <link rel='icon' href='graphmagnifier_118081.ico' type='image/x-icon'/ >
+    <meta property="og:image" content="https://coronavirus-sf.now.sh/preview.png">
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-160706069-1"></script>
@@ -20,19 +21,20 @@
       google.charts.setOnLoadCallback(drawChart);
       function drawChart() {
         var data = google.visualization.arrayToDataTable
-            ([['Day', 'Total Presumptive Positive Cases', 'Deaths'],
-              ['Mar 12', 4, 0],
-              ['Mar 13', 6, 0],
-              ['Mar 14', 6, 0],
-              ['Mar 15', 10, 0],
-              ['Mar 16', 10, 0],
-              ['Mar 17', 12, 0],
-              ['Mar 18', 14, 0]
+            ([['Day', 'Confirmed Cases (Total Positive Cases)', 'Deaths'],
+              ['Mar 10', 3, 0],
+              ['Mar 11', 3, 0],
+              ['Mar 12', 3, 0],
+              ['Mar 13', 5, 0],
+              ['Mar 14', 9, 0],
+              ['Mar 15', 11, 0],
+              ['Mar 16', 11, 0],
+              ['Mar 17', 15, 0]
         ]);
 
         var options = {
           legend: 'none',
-          title: 'Fairfax County Presumptive Positive Cases and Deaths',
+          title: 'Marin County Confirmed Cases and Deaths',
           series: {
             0: { color: '#007bff' }
           },
@@ -51,16 +53,17 @@
 
           var data = google.visualization.arrayToDataTable([
             ['City', 'Day-over-Day Case Growth %', {type: 'string', role: 'annotation'}],
-            ['Mar 18', 16.7, '+16.7%'],
-            ['Mar 17', 20, '+20%'],
+            ['Mar 17', 36.4, '+36.4%'],
             ['Mar 16', 0, '0%'],
-            ['Mar 15', 66.7, '+66.7%'],
-            ['Mar 14', 0, '0%'],
-            ['Mar 13', 50, '+50%']
+            ['Mar 15', 22.2, '+22.2%'],
+            ['Mar 14', 80, '+80%'],
+            ['Mar 13', 66.7, '+66.7%'],
+            ['Mar 12', 0, '0%'],
+            ['Mar 11', 0, '0%']
           ]);
 
           var options = {
-           title: 'Growth Rate of Fairfax County Presumptive Positive Cases',
+           title: 'Growth Rate of Marin County Confirmed Cases',
            pointSize: 10,
            legend: 'none',
             series: {
@@ -122,7 +125,7 @@
   </head>
   <body class="body-style">
     <br><br>
-    <div class="body-headline">Coronavirus (COVID-19) in Fairfax County, VA</div>
+    <div class="body-headline">Coronavirus (COVID-19) in Marin County, CA</div>
 
     <div class="text-center">If the growth rate of cases <b>declines</b> over many days, it's a good sign that we're containing the virus.</div>
 
@@ -130,16 +133,16 @@
     <div class="container">
       <div class="row">
         <div class="col col-sm-auto">
-          <div id="growth_chart_div" style="margin-left:-15px; align:center; width: 500px; height: 500px;"></div>
+          <div id="growth_chart_div" style="margin-left:-15px;align:center; width: 500px; height: 500px;"></div>
         </div>
         <div class="col col-lg-2">
-          <div id="chart_div" style="margin-left:-90px;align:center; width: 800px; height: 500px;"></div>
+          <div id="chart_div" style="margin-left:-110px; align:center; width: 800px; height: 500px;"></div>
         </div>
 
       </div>
     </div>
 
-    <div class="text-center">Updated 3/17/2020 7 pm by <a href="http://www.twitter.com/xianke">@xianke</a> from data at <a href="https://www.fairfaxcounty.gov/covid19/">https://www.fairfaxcounty.gov/covid19/</a>. Source code at <a href="https://github.com/xke/coronavirus-sf/">https://github.com/xke/coronavirus-sf/</a>.</div>
+    <div class="text-center">Updated 3/18/2020 11 am by <a href="http://www.twitter.com/xianke">@xianke</a> from data at <a href="https://coronavirus.marinhhs.org/">https://coronavirus.marinhhs.org/</a>. Source code at <a href="https://github.com/xke/coronavirus-sf/">https://github.com/xke/coronavirus-sf/</a>.</div>
     <br><br><br>
 
    <a name="signup"></a>
