@@ -21,7 +21,7 @@
       google.charts.setOnLoadCallback(drawChart);
       function drawChart() {
         var data = google.visualization.arrayToDataTable
-            ([['Day', 'Confirmed Cases (Total Positive Cases)', 'Deaths'],
+            ([['Day', 'Total Positive Cases (Confirmed)', 'Deaths'],
               ['Mar 10', 5, 0],
               ['Mar 11', 5, 0],
               ['Mar 12', 9, 0],
@@ -30,7 +30,8 @@
               ['Mar 15', 15, 0],
               ['Mar 16', 18, 0],
               ['Mar 17', 27, 0],
-              ['Mar 18', 31, 0]
+              ['Mar 18', 31, 0],
+              ['Mar 19', 35, 0]
         ]);
 
         var options = {
@@ -54,6 +55,7 @@
 
           var data = google.visualization.arrayToDataTable([
             ['City', 'Day-over-Day Case Growth %', {type: 'string', role: 'annotation'}],
+            ['Mar 19', 13, '+13%'],
             ['Mar 18', 15, '+15%'],
             ['Mar 17', 50, '+50%'],
             ['Mar 16', 20, '+20%'],
@@ -144,7 +146,7 @@
       </div>
     </div>
 
-    <div class="text-center">Updated 3/18/2020 1 pm by <a href="http://www.twitter.com/xianke">@xianke</a> from data at <a href="http://www.acphd.org/2019-ncov.aspx">acphd.org</a>. Source code at <a href="https://github.com/xke/coronavirus-sf/">github.com/xke/coronavirus-sf</a>.</div>
+    <div class="text-center">Updated 3/19/2020 1 pm by <a href="http://www.twitter.com/xianke">@xianke</a> from data at <a href="http://www.acphd.org/2019-ncov.aspx">acphd.org</a>. Source code at <a href="https://github.com/xke/coronavirus-sf/">github.com/xke/coronavirus-sf</a>.</div>
     <br><br><br>
 
    <a name="signup"></a>

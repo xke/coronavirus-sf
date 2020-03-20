@@ -21,7 +21,7 @@
       google.charts.setOnLoadCallback(drawChart);
       function drawChart() {
         var data = google.visualization.arrayToDataTable
-            ([['Day', 'Confirmed Cases (Total Positive Cases)', 'Deaths'],
+            ([['Day', 'Total Positive Cases Confirmed', 'Deaths'],
               ['Mar 10', 13, 0],
               ['Mar 11', 14, 0],
               ['Mar 12', 18, 0],
@@ -30,7 +30,8 @@
               ['Mar 15', 37, 0],
               ['Mar 16', 40, 0],
               ['Mar 17', 43, 0],
-              ['Mar 18', 51, 0]
+              ['Mar 18', 51, 0],
+              ['Mar 19', 70, 0]
         ]);
 
         var options = {
@@ -54,6 +55,7 @@
 
           var data = google.visualization.arrayToDataTable([
             ['City', 'Day-over-Day Case Growth %', {type: 'string', role: 'annotation'}],
+            ['Mar 19', 37.3, '+37.3%'],
             ['Mar 18', 18.6, '+18.6%'],
             ['Mar 17', 7.5, '+7.5%'],
             ['Mar 16', 8.1, '+8.1%'],
@@ -134,17 +136,17 @@
     <div class="container">
       <div class="row">
         <div class="col col-sm-auto">
-          <div id="growth_chart_div" style="margin-left:-15px;align:center; width: 500px; height: 500px;"></div>
+          <div id="growth_chart_div" style="margin-left:-30px;align:center; width: 500px; height: 500px;"></div>
         </div>
         <div class="col col-lg-2">
-          <div id="chart_div" style="margin-left:-110px; align:center; width: 800px; height: 500px;"></div>
+          <div id="chart_div" style="margin-left:-82px; align:center; width: 800px; height: 500px;"></div>
         </div>
 
       </div>
     </div>
 
     <br>
-    <div class="text-center">Updated 3/18/2020 10 am by <a href="http://www.twitter.com/xianke">@xianke</a> from data at <a href="https://www.sfdph.org/dph/alerts/coronavirus.asp">sfdph.org</a>. Source code at <a href="https://github.com/xke/coronavirus-sf/">github.com/xke/coronavirus-sf</a>.</div>
+    <div class="text-center">Updated 3/19/2020 10 am by <a href="http://www.twitter.com/xianke">@xianke</a> from data at <a href="https://www.sfdph.org/dph/alerts/coronavirus.asp">sfdph.org</a>. Source code at <a href="https://github.com/xke/coronavirus-sf/">github.com/xke/coronavirus-sf</a>.</div>
 
     <br>
 

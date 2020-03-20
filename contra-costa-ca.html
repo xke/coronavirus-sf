@@ -21,7 +21,7 @@
       google.charts.setOnLoadCallback(drawChart);
       function drawChart() {
         var data = google.visualization.arrayToDataTable
-            ([['Day', 'Confirmed Cases (Total Positive Cases)', 'Deaths'],
+            ([['Day', 'Total Positive Cases (Confirmed)', 'Deaths'],
               ['Mar 10', 10, 0],
               ['Mar 11', 13, 0],
               ['Mar 12', 17, 0],
@@ -29,7 +29,10 @@
               ['Mar 14', 29, 0],
               ['Mar 15', 29, 0],
               ['Mar 16', 34, 0],
-              ['Mar 17', 39, 0]
+              ['Mar 17', 39, 0],
+              ['Mar 18', 41, 0],
+              ['Mar 19', 42, 0]
+
         ]);
 
         var options = {
@@ -53,6 +56,8 @@
 
           var data = google.visualization.arrayToDataTable([
             ['City', 'Day-over-Day Case Growth %', {type: 'string', role: 'annotation'}],
+            ['Mar 19', 2, '+2.4%'],
+            ['Mar 18', 5, '+5%'],
             ['Mar 17', 15, '+15%'],
             ['Mar 16', 17, '+17%'],
             ['Mar 15', 0, '0%'],
@@ -142,7 +147,7 @@
       </div>
     </div>
 
-    <div class="text-center">Updated 3/18/2020 10 am by <a href="http://www.twitter.com/xianke">@xianke</a> from data at <a href="https://www.coronavirus.cchealth.org/">coronavirus.cchealth.org</a>. Source code at <a href="https://github.com/xke/coronavirus-sf/">github.com/xke/coronavirus-sf</a>.</div>
+    <div class="text-center">Updated 3/19/2020 1 pm by <a href="http://www.twitter.com/xianke">@xianke</a> from data at <a href="https://www.coronavirus.cchealth.org/">coronavirus.cchealth.org</a>. Source code at <a href="https://github.com/xke/coronavirus-sf/">github.com/xke/coronavirus-sf</a>.</div>
     <br><br><br>
 
    <a name="signup"></a>
