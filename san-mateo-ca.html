@@ -21,7 +21,7 @@
       google.charts.setOnLoadCallback(drawChart);
       function drawChart() {
         var data = google.visualization.arrayToDataTable
-            ([['Day', 'Total Positive Cases Confirmed', 'Deaths'],
+            ([['Day', 'Total Cases Confirmed', 'Deaths'],
               ['Mar 10', 8, 0],
               ['Mar 11', 14, 0],
               ['Mar 12', 20, 0],
@@ -31,7 +31,8 @@
               ['Mar 16', 41, 1],
               ['Mar 17', 64, 1],
               ['Mar 18', 80, 1],
-              ['Mar 19', 89, 1]
+              ['Mar 19', 89, 1],
+              ['Mar 20', 100, 1]
         ]);
 
         var options = {
@@ -55,6 +56,7 @@
 
           var data = google.visualization.arrayToDataTable([
             ['City', 'Day-over-Day Case Growth %', {type: 'string', role: 'annotation'}],
+            ['Mar 20', 12.4, '+12.4%'],
             ['Mar 19', 11.3, '+11.3%'],
             ['Mar 18', 25, '+25%'],
             ['Mar 17', 56, '+56%'],
@@ -146,7 +148,7 @@
       </div>
     </div>
 
-    <div class="text-center">Updated 3/19/2020 1 pm by <a href="http://www.twitter.com/xianke">@xianke</a> from data at <a href="https://www.smchealth.org/coronavirus">smchealth.org</a>. Source code at <a href="https://github.com/xke/coronavirus-sf/">github.com/xke/coronavirus-sf</a>.</div>
+    <div class="text-center">Updated 3/20/2020 9 am by <a href="http://www.twitter.com/xianke">@xianke</a> from data at <a href="https://www.smchealth.org/coronavirus">smchealth.org</a>. Source code at <a href="https://github.com/xke/coronavirus-sf/">github.com/xke/coronavirus-sf</a>.</div>
     <br><br><br>
 
    <a name="signup"></a>

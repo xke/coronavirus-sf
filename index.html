@@ -21,7 +21,7 @@
       google.charts.setOnLoadCallback(drawChart);
       function drawChart() {
         var data = google.visualization.arrayToDataTable
-            ([['Day', 'Total Positive Cases Confirmed', 'Deaths'],
+            ([['Day', 'Total Confirmed Cases', 'Deaths'],
               ['Mar 10', 13, 0],
               ['Mar 11', 14, 0],
               ['Mar 12', 18, 0],
@@ -31,7 +31,8 @@
               ['Mar 16', 40, 0],
               ['Mar 17', 43, 0],
               ['Mar 18', 51, 0],
-              ['Mar 19', 70, 0]
+              ['Mar 19', 70, 0],
+              ['Mar 20', 76, 0]
         ]);
 
         var options = {
@@ -55,6 +56,7 @@
 
           var data = google.visualization.arrayToDataTable([
             ['City', 'Day-over-Day Case Growth %', {type: 'string', role: 'annotation'}],
+            ['Mar 20', 8.6, '+8.6%'],
             ['Mar 19', 37.3, '+37.3%'],
             ['Mar 18', 18.6, '+18.6%'],
             ['Mar 17', 7.5, '+7.5%'],
@@ -146,7 +148,7 @@
     </div>
 
     <br>
-    <div class="text-center">Updated 3/19/2020 10 am by <a href="http://www.twitter.com/xianke">@xianke</a> from data at <a href="https://www.sfdph.org/dph/alerts/coronavirus.asp">sfdph.org</a>. Source code at <a href="https://github.com/xke/coronavirus-sf/">github.com/xke/coronavirus-sf</a>.</div>
+    <div class="text-center">Updated 3/20/2020 9 am by <a href="http://www.twitter.com/xianke">@xianke</a> from data at <a href="https://www.sfdph.org/dph/alerts/coronavirus.asp">sfdph.org</a>. Source code at <a href="https://github.com/xke/coronavirus-sf/">github.com/xke/coronavirus-sf</a>.</div>
 
     <br>
 
