@@ -29,7 +29,10 @@
               ['Mar 17', 12, 0],
               ['Mar 18', 14, 0],
               ['Mar 19', 16, 0],
-              ['Mar 20', 16, 0]
+              ['Mar 20', 16, 0],
+              ['Mar 21', 22, 0],
+              ['Mar 22', 31, 1],
+              ['Mar 23', 43, 1]
         ]);
 
         var options = {
@@ -53,6 +56,9 @@
 
           var data = google.visualization.arrayToDataTable([
             ['City', 'Day-over-Day Case Growth %', {type: 'string', role: 'annotation'}],
+            ['Mar 23', 38.7, '+38.7%'],
+            ['Mar 22', 40.9, '+40.9%'],
+            ['Mar 21', 37.5, '+37.5%'],
             ['Mar 20', 0, '0%'],
             ['Mar 19', 14.3, '+14.3%'],
             ['Mar 18', 16.7, '+16.7%'],
@@ -130,7 +136,7 @@
 
     <div class="text-center">If the growth rate of cases <b>declines</b> over many days, it's a good sign that we're containing the virus.</div>
 
-
+    <a name="charts"></a>
     <div class="container">
       <div class="row">
         <div class="col col-sm-auto">
@@ -144,7 +150,7 @@
     </div>
 
     <br>
-    <div class="text-center">Updated 3/20/2020 1 pm by <a href="http://www.twitter.com/xianke">@xianke</a> from data at <a href="https://www.fairfaxcounty.gov/covid19/">fairfaxcounty.gov</a>. Source code at <a href="https://github.com/xke/coronavirus-sf/">github.com/xke/coronavirus-sf</a>.</div>
+    <div class="text-center">Updated 3/23/2020 9 am by <a href="http://www.twitter.com/xianke" target="_blank">@xianke</a> from data at <a href="https://www.fairfaxcounty.gov/covid19/" target="_blank">fairfaxcounty.gov</a>. Source code at <a href="https://github.com/xke/coronavirus-sf/" target="_blank">github.com/xke/coronavirus-sf</a>.</div>
     <br><br><br>
 
    <a name="signup"></a>

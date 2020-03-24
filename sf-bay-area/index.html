@@ -5,6 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Coronavirus in SF Bay Area</title>
 
+    <link rel='icon' href='../graphmagnifier_118081.ico' type='image/x-icon'/ >
+    <meta property="og:image" content="https://coronavirus-sf.now.sh/preview.png">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-160706069-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-160706069-1');
+
+    </script>
+
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -21,6 +35,13 @@
       .text-center {
         text-align:center;
       }
+
+      .iframe-chart {
+        border:none;
+        width: 100%;
+        height: 550px;
+        margin-bottom: 20px;
+      }
     </style>
   </head>
   <body>
@@ -28,31 +49,86 @@
     <br>
     <h2 style="text-align:center">Coronavirus in the SF Bay Area</h2>
     <br><br>
+
+
+
     <div class="button-links">
-
       <a href="../index.html" class="btn btn-lg btn-primary btn-block">San Francisco City & County</a>
+    </div>
 
-      <a href="../san-mateo-ca.html" class="btn btn-lg btn-primary btn-block">San Mateo County (Peninsula)</a>
+    <iframe src="../index.html#charts" class="iframe-chart"scrolling="no"></iframe>
 
+    <div class="button-links">
+        <a href="../san-mateo-ca.html" class="btn btn-lg btn-primary btn-block">San Mateo County (Peninsula)</a>
+    </div>
+
+    <iframe src="../san-mateo-ca.html#charts" class="iframe-chart"  scrolling="no"></iframe>
+
+    <div class="button-links">
       <a href="../santa-clara-ca.html" class="btn btn-lg btn-primary btn-block">Santa Clara County (South Bay)</a>
+    </div>
 
+    <iframe src="../santa-clara-ca.html#charts" class="iframe-chart"  scrolling="no"></iframe>
+
+    <div class="button-links">
       <a href="../alameda-ca.html" class="btn btn-lg btn-primary btn-block">Alameda County (East Bay)</a>
+    </div>
 
+    <iframe src="../alameda-ca.html#charts" class="iframe-chart"  scrolling="no"></iframe>
+
+    <div class="button-links">
       <a href="../contra-costa-ca.html" class="btn btn-lg btn-primary btn-block">Contra Costa County (East Bay North)</a>
+    </div>
 
+    <iframe src="../contra-costa-ca.html#charts" class="iframe-chart"  scrolling="no"></iframe>
+
+    <div class="button-links">
       <a href="../marin-ca.html" class="btn btn-lg btn-primary btn-block">Marin County (North Bay)</a>
+    </div>
+
+    <iframe src="../marin-ca.html#charts" class="iframe-chart"  scrolling="no"></iframe>
 
 
-      <br><br><br>
+    <br><br><br>
+    <a name="signup"></a>
+    <section>
+      <div class="container">
+        <div class="row justify-content-center text-center">
+          <div class="col-xl-7 col-lg-8 col-md-10">
+            <h3 class="h3 mb-5">Interested in email notifications on updates?</h3>
+
+            <form action="https://now.us19.list-manage.com/subscribe/post?u=16d8b23cec63aacf260235ed4&amp;id=604d203e4d" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                <div id="mc_embed_signup_scroll">
+                  <div class="d-sm-flex flex-column flex-sm-row mb-3 justify-content-center">
+                    <input type="email" value="" name="EMAIL" class="mr-sm-1 mb-2 mb-sm-0 form-control form-control-lg" id="mce-EMAIL" placeholder="Email Address" required>
+                    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_0a37e3deb755c19412bcb1357_28e2dcd89c" tabindex="-1" value=""></div>
+                    <div class="clear"><input type="submit" class="ml-sm-1 btn btn-lg btn-primary btn-loading" value="Send" name="subscribe" id="mc-embedded-subscribe" data-loading-text="Sending"></div>
+                </div>
+            </form>
+            <br><br>
+
+
+          </div>
+        </div>
+      </div>
+    </section>
+
       <div class="text-center">
         <img src="../people-fill.svg" alt="" width="32" height="32" style="margin-bottom:2px">
-        <a href="http://give2sf.org/">give2sf.org</a> to donate to SF's COVID-19 fund, or visit <a href="https://www.paypal.com/fundraiser/113352600784545158">paypal.com</a> to support national and global funds.</div>
+        <a href="http://give2sf.org/">give2sf.org</a> to donate to SF's COVID-19 fund, or visit <a href="https://www.paypal.com/fundraiser/113352600784545158">paypal.com</a> to support national and global funds.
+      </div>
       <br><br><br>
       <!--<div class="text-center">
         Visualization of cases for other California counties: <a href="https://projects.sfchronicle.com/2020/coronavirus-map/">https://projects.sfchronicle.com/2020/coronavirus-map/</a>
       </div>-->
 
-    </div>
+    <script>
+      // scroll to top:
+      window.onbeforeunload = function () {
+        window.scrollTo(0, 0);
+      }
+    </script>
 
   </body>
 </html>

@@ -31,8 +31,10 @@
               ['Mar 16', 11, 0],
               ['Mar 17', 15, 0],
               ['Mar 18', 15, 0],
-              ['Mar 19', 25, 0]
-
+              ['Mar 19', 25, 0],
+              ['Mar 20', 38, 0],
+              ['Mar 21', 38, 0],
+              ['Mar 22', 38, 0]
         ]);
 
         var options = {
@@ -56,6 +58,9 @@
 
           var data = google.visualization.arrayToDataTable([
             ['City', 'Day-over-Day Case Growth %', {type: 'string', role: 'annotation'}],
+            ['Mar 22', 0, '0%'],
+            ['Mar 21', 0, '0%'],
+            ['Mar 20', 52, '+52%'],
             ['Mar 19', 66.7, '+66.7%'],
             ['Mar 18', 0, '0%'],
             ['Mar 17', 36.4, '+36.4%'],
@@ -134,7 +139,7 @@
 
     <div class="text-center">If the growth rate of cases <b>declines</b> over many days, it's a good sign that we're containing the virus. <a href="sf-bay-area/">How about elsewhere in the Bay Area?</a></div>
 
-
+    <a name="charts"></a>
     <div class="container">
       <div class="row">
         <div class="col col-sm-auto">
@@ -147,7 +152,7 @@
       </div>
     </div>
 
-    <div class="text-center">Updated 3/20/2020 9 am by <a href="http://www.twitter.com/xianke">@xianke</a> from data at <a href="https://coronavirus.marinhhs.org/">coronavirus.marinhhs.org</a>. Source code at <a href="https://github.com/xke/coronavirus-sf/">github.com/xke/coronavirus-sf</a>.</div>
+    <div class="text-center">Updated 3/23/2020 9 am by <a href="http://www.twitter.com/xianke" target="_blank">@xianke</a> from data at <a href="https://coronavirus.marinhhs.org/" target="_blank">coronavirus.marinhhs.org</a>. Source code at <a href="https://github.com/xke/coronavirus-sf/" target="_blank">github.com/xke/coronavirus-sf</a>.</div>
     <br><br><br>
 
    <a name="signup"></a>
