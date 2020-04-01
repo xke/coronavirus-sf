@@ -35,8 +35,15 @@
               ['Mar 20', 196, 8],
               ['Mar 21', 263, 8],
               ['Mar 22', 302, 10],
-              ['Mar 23', 321, 13]
-
+              ['Mar 23', 321, 13],
+              ['Mar 24', 375, 16],
+              ['Mar 25', 459, 17],
+              ['Mar 26', 542, 19],
+              ['Mar 27', 574, 20],
+              ['Mar 28', 591, 25],
+              ['Mar 29', 646, 25],
+              ['Mar 30', 848, 28],
+              ['Mar 31', 890, 30]
         ]);
 
         var options = {
@@ -60,6 +67,14 @@
 
           var data = google.visualization.arrayToDataTable([
             ['City', 'Day-over-Day Case Growth %', {type: 'string', role: 'annotation'}],
+            ['Mar 31', 5, '+5%'],
+            ['Mar 30', 31.3, '+31.3%'],
+            ['Mar 29', 9.3, '+9.3%'],
+            ['Mar 28', 3, '+3%'],
+            ['Mar 27', 5.9, '+5.9%'],
+            ['Mar 26', 18.1, '+18.1%'],
+            ['Mar 25', 22.4, '+22.4%'],
+            ['Mar 24', 16.8, '+16.8%'],
             ['Mar 23', 6.4, '+6.3%'],
             ['Mar 22', 14.8, '+14.8%'],
             ['Mar 21', 34.2, '+34.2%'],
@@ -86,7 +101,7 @@
             annotations: {
               alwaysOutside: true,
               textStyle: {
-                fontSize: 22,
+                fontSize: 15,
                 auraColor: 'none',
                 color: '#007bff'
               },
@@ -146,17 +161,17 @@
     <div class="container">
       <div class="row">
         <div class="col col-sm-auto">
-          <div id="growth_chart_div" style="margin-left:-25px;align:center; width: 500px; height: 500px;"></div>
+          <div id="growth_chart_div" style="margin-left:-25px;align:center; width: 500px; height: 700px;"></div>
         </div>
         <div class="col col-lg-2">
-          <div id="chart_div" style="margin-left:-80px; align:center; width: 780px; height: 500px;"></div>
+          <div id="chart_div" style="margin-top:40px; margin-left:-80px; align:center; width: 780px; height: 500px;"></div>
         </div>
 
       </div>
     </div>
 
     <br>
-    <div class="text-center">Updated 3/23/2020 5 pm by <a href="http://www.twitter.com/xianke" target="_blank">@xianke</a> from data at <a href="https://www.sccgov.org/sites/phd/DiseaseInformation/novel-coronavirus/Pages/home.aspx" target="_blank">sccgov.org</a>. Source code at <a href="https://github.com/xke/coronavirus-sf/" target="_blank">github.com/xke/coronavirus-sf</a>.</div>
+    <div class="text-center">Updated 3/31/2020 7 pm by <a href="http://www.twitter.com/xianke" target="_blank">@xianke</a> from data at <a href="https://www.sccgov.org/sites/phd/DiseaseInformation/novel-coronavirus/Pages/dashboard.aspx" target="_blank">sccgov.org</a>. Source code at <a href="https://github.com/xke/coronavirus-sf/" target="_blank">github.com/xke/coronavirus-sf</a>.</div>
     <br><br><br>
 
    <a name="signup"></a>
