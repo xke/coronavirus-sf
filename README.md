@@ -4,6 +4,8 @@ Charts to understand coronavirus growth rate in SF and nearby counties.
 
 See site at https://coronavirus-sf.now.sh.
 
+This is a public service project by [@xianke](https://www.twitter.com/xianke).
+
 
 # why does this site exist?
 
@@ -21,7 +23,7 @@ Feel free to fork this Github repository and set up your own page. Just let me k
 
 * [Austin, TX](https://whereiskelsey.com/coronavirus-tx/), tracked by [@kelseypedersen](https://github.com/kelseypedersen/coronavirus-tx/).
 
-* [Fairfax, VA](https://coronavirus-sf.now.sh/fairfax-va.html), tracked by [@xianke](https://github.com/xke/coronavirus-sf/).
+* [Fairfax, VA](https://coronavirus-sf.now.sh/fairfax-va.html), tracked by [@xianke](https://www.twitter.com/xianke).
 
 
 
