@@ -1,9 +1,17 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Coronavirus in Santa Clara County, CA</title>
-    <link rel='icon' href='graphmagnifier_118081.ico' type='image/x-icon'/ >
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='icon' href='images/graphmagnifier_118081.ico' type='image/x-icon'/ >
+
+    <title>Coronavirus in Santa Clara County, CA: Growth Rates and Trends</title>
+    <meta name="description" content="Daily growth rates and historical trends of COVID-19 cases in Santa Clara County, CA.">
+    <meta property="og:title" content="Coronavirus in Santa Clara County, CA: Growth Rates and Trends">
+    <meta property="og:description" content="Daily growth rates and historical trends of COVID-19 cases in Santa Clara County, CA.">
     <meta property="og:image" content="https://coronavirus-sf.now.sh/preview.png">
+    <meta property="og:url" content="https://coronavirus-sf.now.sh/santa-clara-ca.html">
+
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-160706069-1"></script>
@@ -15,145 +23,28 @@
       gtag('config', 'UA-160706069-1');
     </script>
 
+    <!-- GroveFlow-enabled charts -->
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript" src="https://groveflow.com/js/growth-line-charts-from-sheets.min.js"></script>
     <script type="text/javascript">
+      // coded by @xianke
+      // for more info: github.com/xke/coronavirus-sf
+      // contact hello@groveflow.com if you want to build a mission-critical dashboard!
+
+      LOCATION_NAME = "Santa Clara County";
+      SPREADSHEET_URL = "https://docs.google.com/spreadsheet/tq?gid=850808370&key=182k-itvuuVrsF9miuJeUiAjOVEFcaSJp_DhVvKgSoms";
+
       google.charts.load("current", {packages:["corechart", "bar"]});
-      google.charts.setOnLoadCallback(drawChart);
-      function drawChart() {
-        var data = google.visualization.arrayToDataTable
-            ([['Day', 'Total Confirmed Cases', 'Deaths'],
-              ['Mar 10', 45, 1],
-              ['Mar 11', 48, 1],
-              ['Mar 12', 66, 1],
-              ['Mar 13', 79, 2],
-              ['Mar 14', 91, 2],
-              ['Mar 15', 114, 2],
-              ['Mar 16', 138, 4],
-              ['Mar 17', 155, 4],
-              ['Mar 18', 175, 6],
-              ['Mar 19', 189, 6],
-              ['Mar 20', 196, 8],
-              ['Mar 21', 263, 8],
-              ['Mar 22', 302, 10],
-              ['Mar 23', 321, 13],
-              ['Mar 24', 375, 16],
-              ['Mar 25', 459, 17],
-              ['Mar 26', 542, 19],
-              ['Mar 27', 574, 20],
-              ['Mar 28', 591, 25],
-              ['Mar 29', 646, 25],
-              ['Mar 30', 848, 28],
-              ['Mar 31', 890, 30],
-              ['Apr 1', 956, 32],
-              ['Apr 2', 1019, 36]
-        ]);
+      google.charts.setOnLoadCallback(drawGrowthChart);
+      google.charts.setOnLoadCallback(drawLineChart);
 
-        var options = {
-          legend: 'none',
-          title: 'Santa Clara County Confirmed Cases and Deaths',
-          series: {
-            0: { color: '#007bff' }
-          },
-          pointSize: 10,
-          vAxis: { minValue: 60, maxValue: 100 }
-        };
-
-        var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
-        chart.draw(data, options);
-    }
-
-    // growth chart
-    google.charts.setOnLoadCallback(drawAnnotations);
-
-    function drawAnnotations() {
-
-          var data = google.visualization.arrayToDataTable([
-            ['City', 'Day-over-Day Case Growth %', {type: 'string', role: 'annotation'}],
-            ['Apr 2', 6.6, '+6.6%'],
-            ['Apr 1', 7.4, '+7.4%'],
-            ['Mar 31', 5, '+5%'],
-            ['Mar 30', 31.3, '+31.3%'],
-            ['Mar 29', 9.3, '+9.3%'],
-            ['Mar 28', 3, '+3%'],
-            ['Mar 27', 5.9, '+5.9%'],
-            ['Mar 26', 18.1, '+18.1%'],
-            ['Mar 25', 22.4, '+22.4%'],
-            ['Mar 24', 16.8, '+16.8%'],
-            ['Mar 23', 6.4, '+6.3%'],
-            ['Mar 22', 14.8, '+14.8%'],
-            ['Mar 21', 34.2, '+34.2%'],
-            ['Mar 20', 3.7, '+3.7%'],
-            ['Mar 19', 8, '+8%'],
-            ['Mar 18', 12.9, '+12.9%'],
-            ['Mar 17', 12.3, '+12.3%'],
-            ['Mar 16', 21, '+21%'],
-            ['Mar 15', 25.3, '+25.3%'],
-            ['Mar 14', 15.2, '+15.2%'],
-            ['Mar 13', 19.7, '+19.7%'],
-            ['Mar 12', 37.5, '+37.5%'],
-            ['Mar 11', 6.7, '+6.7%']
-          ]);
-
-          var options = {
-           title: 'Growth Rate of Santa Clara County Confirmed Cases',
-           pointSize: 10,
-           legend: 'none',
-            series: {
-              0: { color: '#007bff' }
-            },
-            chartArea: {width: '50%'},
-            annotations: {
-              alwaysOutside: true,
-              textStyle: {
-                fontSize: 15,
-                auraColor: 'none',
-                color: '#007bff'
-              },
-              boxStyle: {
-                stroke: '#ccc',
-                strokeWidth: 2,
-                gradient: {
-                  color1: 'white',
-                  color2: 'white',
-                  x1: '0%', y1: '0%',
-                  x2: '100%', y2: '100%'
-                }
-              }
-            },
-            hAxis: {
-              title: 'Growth Rate (Lower = Better!!!)',
-              minValue: 0,
-            }
-          };
-          var chart = new google.visualization.BarChart(document.getElementById('growth_chart_div'));
-          chart.draw(data, options);
-        }
     </script>
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <style>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" type="text/css" href="css/main.css">
 
-      .body-headline {
-        text-align:center;
-        color: #007bff;
-        font-size: 22px;
-        margin-bottom:22px;
-        font-weight:500;
-      }
-
-      .body-style {
-        margin-left:0%;
-        margin-right:0%;
-        background-color:white;
-        color:black;
-      }
-
-      .text-center {
-        text-align:center;
-      }
-
-    </style>
   </head>
   <body class="body-style">
     <br><br>
@@ -175,7 +66,7 @@
     </div>
 
     <br>
-    <div class="text-center">Updated 4/2/2020 5 pm by <a href="http://www.twitter.com/xianke" target="_blank">@xianke</a> from data at <a href="https://www.sccgov.org/sites/phd/DiseaseInformation/novel-coronavirus/Pages/dashboard.aspx" target="_blank">sccgov.org</a>. Source code at <a href="https://github.com/xke/coronavirus-sf/" target="_blank">github.com/xke/coronavirus-sf</a>.</div>
+    <div class="text-center">Updated by <a href="http://www.twitter.com/xianke" target="_blank">@xianke</a> from data at <a href="https://www.sccgov.org/sites/phd/DiseaseInformation/novel-coronavirus/Pages/dashboard.aspx" target="_blank">sccgov.org</a>. Source code at <a href="https://github.com/xke/coronavirus-sf/" target="_blank">github.com/xke/coronavirus-sf</a>.</div>
     <br><br><br>
 
    <a name="signup"></a>
@@ -203,7 +94,7 @@
       </section>
 
     <div class="text-center">
-      <img src="people-fill.svg" alt="" width="32" height="32" style="margin-bottom:2px">
+      <img src="images/people-fill.svg" alt="" width="32" height="32" style="margin-bottom:2px">
       <a href="http://give2sf.org/">give2sf.org</a> to donate to SF's COVID-19 fund, or visit <a href="https://www.paypal.com/fundraiser/113352600784545158">paypal.com</a> to support national and global funds.</div>
     <br><br><br>
 

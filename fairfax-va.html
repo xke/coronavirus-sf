@@ -1,8 +1,18 @@
 <!DOCTYPE html>
 <html>
+
   <head>
-    <title>Coronavirus in Fairfax County, VA</title>
-    <link rel='icon' href='graphmagnifier_118081.ico' type='image/x-icon'/ >
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='icon' href='images/graphmagnifier_118081.ico' type='image/x-icon'/ >
+
+    <title>Coronavirus in Fairfax County, VA: Growth Rates and Trends</title>
+    <meta name="description" content="Daily growth rates and historical trends of COVID-19 cases in Fairfax County, VA.">
+    <meta property="og:title" content="Coronavirus in Fairfax County, VA: Growth Rates and Trends">
+    <meta property="og:description" content="Daily growth rates and historical trends of COVID-19 cases in Fairfax County, VA.">
+    <meta property="og:image" content="https://coronavirus-sf.now.sh/preview.png">
+    <meta property="og:url" content="https://coronavirus-sf.now.sh/fairfax-va.html">
+
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-160706069-1"></script>
@@ -14,142 +24,31 @@
       gtag('config', 'UA-160706069-1');
     </script>
 
+    <!-- GroveFlow-enabled charts -->
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript" src="https://groveflow.com/js/growth-line-charts-from-sheets.min.js"></script>
     <script type="text/javascript">
+      // coded by @xianke
+      // for more info: github.com/xke/coronavirus-sf
+      // contact hello@groveflow.com if you want to build a mission-critical dashboard!
+
+      LOCATION_NAME = "Fairfax County";
+      SPREADSHEET_URL = "https://docs.google.com/spreadsheet/tq?gid=2021914138&key=182k-itvuuVrsF9miuJeUiAjOVEFcaSJp_DhVvKgSoms";
+
       google.charts.load("current", {packages:["corechart", "bar"]});
-      google.charts.setOnLoadCallback(drawChart);
-      function drawChart() {
-        var data = google.visualization.arrayToDataTable
-            ([['Day', 'Total Presumptive Cases', 'Deaths'],
-              ['Mar 12', 4, 0],
-              ['Mar 13', 6, 0],
-              ['Mar 14', 6, 0],
-              ['Mar 15', 10, 0],
-              ['Mar 16', 10, 0],
-              ['Mar 17', 12, 0],
-              ['Mar 18', 14, 0],
-              ['Mar 19', 16, 0],
-              ['Mar 20', 16, 0],
-              ['Mar 21', 22, 0],
-              ['Mar 22', 31, 1],
-              ['Mar 23', 43, 1],
-              ['Mar 24', 46, 1],
-              ['Mar 25', 77, 1],
-              ['Mar 26', 80, 1],
-              ['Mar 27', 124, 1],
-              ['Mar 28', 156, 2],
-              ['Mar 29', 188, 2],
-              ['Mar 30', 225, 2],
-              ['Mar 31', 245, 2],
-              ['Apr 1', 288, 5],
-              ['Apr 2', 328, 5]
-        ]);
+      google.charts.setOnLoadCallback(drawGrowthChart);
+      google.charts.setOnLoadCallback(drawLineChart);
 
-        var options = {
-          legend: 'none',
-          title: 'Fairfax County Presumptive Positive Cases and Deaths',
-          series: {
-            0: { color: '#007bff' }
-          },
-          pointSize: 10,
-          vAxis: { minValue: 60, maxValue: 100 }
-        };
-
-        var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
-        chart.draw(data, options);
-    }
-
-    // growth chart
-    google.charts.setOnLoadCallback(drawAnnotations);
-
-    function drawAnnotations() {
-
-          var data = google.visualization.arrayToDataTable([
-            ['Day', 'Day-over-Day Case Growth %', {type: 'string', role: 'annotation'}],
-            ['Apr 2', 13.9, '+13.9%'],
-            ['Apr 1', 17.6, '+17.6%'],
-            ['Mar 31', 8.9, '+8.9%'],
-            ['Mar 30', 19.7, '+19.7%'],
-            ['Mar 29', 20.5, '+20.5%'],
-            ['Mar 28', 25.8, '+25.8%'],
-            ['Mar 27', 55, '+55%'],
-            ['Mar 26', 3.9, '+3.9%'],
-            ['Mar 25', 67.4, '+67.4%'],
-            ['Mar 24', 7, '+7%'],
-            ['Mar 23', 38.7, '+38.7%'],
-            ['Mar 22', 40.9, '+40.9%'],
-            ['Mar 21', 37.5, '+37.5%'],
-            ['Mar 20', 0, '0%'],
-            ['Mar 19', 14.3, '+14.3%'],
-            ['Mar 18', 16.7, '+16.7%'],
-            ['Mar 17', 20, '+20%'],
-            ['Mar 16', 0, '0%'],
-            ['Mar 15', 66.7, '+66.7%'],
-            ['Mar 14', 0, '0%'],
-            ['Mar 13', 50, '+50%']
-          ]);
-
-          var options = {
-           title: 'Growth Rate of Fairfax County Presumptive Positive Cases',
-           pointSize: 10,
-           legend: 'none',
-            series: {
-              0: { color: '#007bff' }
-            },
-            chartArea: {width: '50%'},
-            annotations: {
-              alwaysOutside: true,
-              textStyle: {
-                fontSize: 15,
-                auraColor: 'none',
-                color: '#007bff'
-              },
-              boxStyle: {
-                stroke: '#ccc',
-                strokeWidth: 2,
-                gradient: {
-                  color1: 'white',
-                  color2: 'white',
-                  x1: '0%', y1: '0%',
-                  x2: '100%', y2: '100%'
-                }
-              }
-            },
-            hAxis: {
-              title: 'Growth Rate (Lower = Better!!!)',
-              minValue: 0,
-            }
-          };
-          var chart = new google.visualization.BarChart(document.getElementById('growth_chart_div'));
-          chart.draw(data, options);
-        }
     </script>
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <style>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" type="text/css" href="css/main.css">
 
-      .body-headline {
-        text-align:center;
-        color: #007bff;
-        font-size: 22px;
-        margin-bottom:22px;
-        font-weight:500;
-      }
-
-      .body-style {
-        margin-left:0%;
-        margin-right:0%;
-        background-color:white;
-        color:black;
-      }
-
-      .text-center {
-        text-align:center;
-      }
-
-    </style>
   </head>
+
+
   <body class="body-style">
     <br><br>
     <div class="body-headline">Coronavirus (COVID-19) in Fairfax County, VA</div>
@@ -170,7 +69,7 @@
     </div>
 
     <br>
-    <div class="text-center">Updated 4/2/2020 10 am by <a href="http://www.twitter.com/xianke" target="_blank">@xianke</a> from data at <a href="https://www.fairfaxcounty.gov/covid19/" target="_blank">fairfaxcounty.gov</a>. Source code at <a href="https://github.com/xke/coronavirus-sf/" target="_blank">github.com/xke/coronavirus-sf</a>.</div>
+    <div class="text-center">Updated by <a href="http://www.twitter.com/xianke" target="_blank">@xianke</a> from data at <a href="https://www.fairfaxcounty.gov/covid19/" target="_blank">fairfaxcounty.gov</a>. Source code at <a href="https://github.com/xke/coronavirus-sf/" target="_blank">github.com/xke/coronavirus-sf</a>.</div>
     <br><br><br>
 
    <a name="signup"></a>

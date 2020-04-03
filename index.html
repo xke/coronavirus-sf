@@ -1,9 +1,17 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Coronavirus in San Francisco</title>
-    <link rel='icon' href='graphmagnifier_118081.ico' type='image/x-icon'/ >
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='icon' href='images/graphmagnifier_118081.ico' type='image/x-icon'/ >
+
+    <title>Coronavirus in San Francisco: Growth Rates and Trends</title>
+    <meta name="description" content="Daily growth rates and historical trends of COVID-19 cases in San Francisco.">
+    <meta property="og:title" content="Coronavirus in San Francisco: Growth Rates and Trends">
+    <meta property="og:description" content="Daily growth rates and historical trends of COVID-19 cases in San Francisco.">
     <meta property="og:image" content="https://coronavirus-sf.now.sh/preview.png">
+    <meta property="og:url" content="https://coronavirus-sf.now.sh">
+
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-160706069-1"></script>
@@ -15,145 +23,28 @@
       gtag('config', 'UA-160706069-1');
     </script>
 
+    <!-- GroveFlow-enabled charts -->
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript" src="https://groveflow.com/js/growth-line-charts-from-sheets.min.js"></script>
     <script type="text/javascript">
+      // coded by @xianke
+      // for more info: github.com/xke/coronavirus-sf
+      // contact hello@groveflow.com if you want to build a mission-critical dashboard!
+
+      LOCATION_NAME = "SF";
+      SPREADSHEET_URL = "https://docs.google.com/spreadsheet/tq?gid=0&key=182k-itvuuVrsF9miuJeUiAjOVEFcaSJp_DhVvKgSoms";
+
       google.charts.load("current", {packages:["corechart", "bar"]});
-      google.charts.setOnLoadCallback(drawChart);
-      function drawChart() {
-        var data = google.visualization.arrayToDataTable
-            ([['Day', 'Total Confirmed Cases', 'Deaths'],
-              ['Mar 10', 13, 0],
-              ['Mar 11', 14, 0],
-              ['Mar 12', 18, 0],
-              ['Mar 13', 23, 0],
-              ['Mar 14', 28, 0],
-              ['Mar 15', 37, 0],
-              ['Mar 16', 40, 0],
-              ['Mar 17', 43, 0],
-              ['Mar 18', 51, 0],
-              ['Mar 19', 70, 0],
-              ['Mar 20', 76, 0],
-              ['Mar 21', 84, 0],
-              ['Mar 22', 108, 0],
-              ['Mar 23', 131, 0],
-              ['Mar 24', 152, 0],
-              ['Mar 25', 178, 1],
-              ['Mar 26', 223, 2],
-              ['Mar 27', 279, 3],
-              ['Mar 28', 308, 4],
-              ['Mar 29', 340, 5],
-              ['Mar 30', 374, 6],
-              ['Mar 31', 397, 6],
-              ['Apr 1', 434, 7],
-              ['Apr 2', 450, 7]
-        ]);
+      google.charts.setOnLoadCallback(drawGrowthChart);
+      google.charts.setOnLoadCallback(drawLineChart);
 
-        var options = {
-          legend: 'none',
-          title: 'SF Confirmed Cases and Deaths',
-          series: {
-            0: { color: '#007bff' }
-          },
-          pointSize: 10,
-          vAxis: { minValue: 60, maxValue: 100 }
-        };
-
-        var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
-        chart.draw(data, options);
-    }
-
-    // growth chart
-    google.charts.setOnLoadCallback(drawAnnotations);
-
-    function drawAnnotations() {
-
-          var data = google.visualization.arrayToDataTable([
-            ['Day', 'Day-over-Day Case Growth %', {type: 'string', role: 'annotation'}],
-            ['Apr 2', 3.7, '+3.7%'],
-            ['Apr 1', 9.3, '+9.3%'],
-            ['Mar 31', 6.1, '+6.1%'],
-            ['Mar 30', 10, '+10%'],
-            ['Mar 29', 10.4, '+10.4%'],
-            ['Mar 28', 10.4, '+10.4%'],
-            ['Mar 27', 25.1, '+25.1%'],
-            ['Mar 26', 25.3, '+25.3%'],
-            ['Mar 25', 17.1, '+17.1%'],
-            ['Mar 24', 16, '+16%'],
-            ['Mar 23', 21.3, '+21.3%'],
-            ['Mar 22', 28.6, '+28.6%'],
-            ['Mar 21', 10.5, '+10.5%'],
-            ['Mar 20', 8.6, '+8.6%'],
-            ['Mar 19', 37.3, '+37.3%'],
-            ['Mar 18', 18.6, '+18.6%'],
-            ['Mar 17', 7.5, '+7.5%'],
-            ['Mar 16', 8.1, '+8.1%'],
-            ['Mar 15', 32.1, '+32.1%'],
-            ['Mar 14', 21.4, '+21.4%'],
-            ['Mar 13', 27.8, '+27.8%'],
-            ['Mar 12', 28.6, '+28.6%'],
-            ['Mar 11', 7.7, '+7.7%']
-          ]);
-
-          var options = {
-           title: 'Growth Rate of SF Confirmed Cases',
-           pointSize: 10,
-           legend: 'none',
-            series: {
-              0: { color: '#007bff' }
-            },
-            chartArea: {width: '50%'},
-            annotations: {
-              alwaysOutside: true,
-              textStyle: {
-                fontSize: 15,
-                auraColor: 'none',
-                color: '#007bff'
-              },
-              boxStyle: {
-                stroke: '#ccc',
-                strokeWidth: 2,
-                gradient: {
-                  color1: 'white',
-                  color2: 'white',
-                  x1: '0%', y1: '0%',
-                  x2: '100%', y2: '100%'
-                }
-              }
-            },
-            hAxis: {
-              title: 'Growth Rate (Lower = Better!!!)',
-              minValue: 0,
-            }
-          };
-          var chart = new google.visualization.BarChart(document.getElementById('growth_chart_div'));
-          chart.draw(data, options);
-        }
     </script>
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <style>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" type="text/css" href="css/main.css">
 
-      .body-headline {
-        text-align:center;
-        color: #007bff;
-        font-size: 22px;
-        margin-bottom:22px;
-        font-weight:500;
-      }
-
-      .body-style {
-        margin-left:0%;
-        margin-right:0%;
-        background-color:white;
-        color:black;
-      }
-
-      .text-center {
-        text-align:center;
-      }
-
-    </style>
   </head>
   <body class="body-style">
     <br><br>
@@ -175,7 +66,7 @@
     </div>
 
     <br>
-    <div class="text-center">Updated 4/2/2020 10 am by <a href="http://www.twitter.com/xianke"  target="_blank">@xianke</a> from data at <a href="https://www.sfdph.org/dph/alerts/coronavirus.asp" target="_blank">sfdph.org</a>. Source code at <a href="https://github.com/xke/coronavirus-sf/" target="_blank">github.com/xke/coronavirus-sf</a>.</div>
+    <div class="text-center">Updated by <a href="http://www.twitter.com/xianke"  target="_blank">@xianke</a> from data at <a href="https://www.sfdph.org/dph/alerts/coronavirus.asp" target="_blank">sfdph.org</a>. Source code at <a href="https://github.com/xke/coronavirus-sf/" target="_blank">github.com/xke/coronavirus-sf</a>.</div>
 
     <br>
 
@@ -206,7 +97,7 @@
     </section>
 
     <div class="text-center">
-      <img src="people-fill.svg" alt="" width="32" height="32" style="margin-bottom:2px">
+      <img src="images/people-fill.svg" alt="" width="32" height="32" style="margin-bottom:2px">
       <a href="http://give2sf.org/">give2sf.org</a> to donate to SF's COVID-19 fund, or visit <a href="https://www.paypal.com/fundraiser/113352600784545158">paypal.com</a> to support national and global funds.</div>
     <br><br><br>
 

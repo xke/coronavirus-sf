@@ -1,9 +1,17 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Coronavirus in Marin County, CA</title>
-    <link rel='icon' href='graphmagnifier_118081.ico' type='image/x-icon'/ >
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='icon' href='images/graphmagnifier_118081.ico' type='image/x-icon'/ >
+
+    <title>Coronavirus in Marin County, CA: Growth Rates and Trends</title>
+    <meta name="description" content="Daily growth rates and historical trends of COVID-19 cases in Marin County, CA.">
+    <meta property="og:title" content="Coronavirus in Marin County, CA: Growth Rates and Trends">
+    <meta property="og:description" content="Daily growth rates and historical trends of COVID-19 cases in Marin County, CA.">
     <meta property="og:image" content="https://coronavirus-sf.now.sh/preview.png">
+    <meta property="og:url" content="https://coronavirus-sf.now.sh/marin-ca.html">
+
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-160706069-1"></script>
@@ -15,143 +23,28 @@
       gtag('config', 'UA-160706069-1');
     </script>
 
+    <!-- GroveFlow-enabled charts -->
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript" src="https://groveflow.com/js/growth-line-charts-from-sheets.min.js"></script>
     <script type="text/javascript">
+      // coded by @xianke
+      // for more info: github.com/xke/coronavirus-sf
+      // contact hello@groveflow.com if you want to build a mission-critical dashboard!
+
+      LOCATION_NAME = "Marin County";
+      SPREADSHEET_URL = "https://docs.google.com/spreadsheet/tq?gid=1852231942&key=182k-itvuuVrsF9miuJeUiAjOVEFcaSJp_DhVvKgSoms";
+
       google.charts.load("current", {packages:["corechart", "bar"]});
-      google.charts.setOnLoadCallback(drawChart);
-      function drawChart() {
-        var data = google.visualization.arrayToDataTable
-            ([['Day', 'Total Confirmed Cases', 'Deaths'],
-              ['Mar 10', 3, 0],
-              ['Mar 11', 3, 0],
-              ['Mar 12', 3, 0],
-              ['Mar 13', 5, 0],
-              ['Mar 14', 9, 0],
-              ['Mar 15', 11, 0],
-              ['Mar 16', 11, 0],
-              ['Mar 17', 15, 0],
-              ['Mar 18', 15, 0],
-              ['Mar 19', 25, 0],
-              ['Mar 20', 38, 0],
-              ['Mar 21', 38, 0],
-              ['Mar 22', 38, 0],
-              ['Mar 23', 38, 0],
-              ['Mar 24', 47, 0],
-              ['Mar 25', 53, 0],
-              ['Mar 26', 65, 0],
-              ['Mar 27', 68, 1],
-              ['Mar 28', 74, 1],
-              ['Mar 29', 93, 1],
-              ['Mar 30', 98, 4],
-              ['Mar 31', 107, 5],
-              ['Apr 1', 108, 6]
-        ]);
+      google.charts.setOnLoadCallback(drawGrowthChart);
+      google.charts.setOnLoadCallback(drawLineChart);
 
-        var options = {
-          legend: 'none',
-          title: 'Marin County Confirmed Cases and Deaths',
-          series: {
-            0: { color: '#007bff' }
-          },
-          pointSize: 10,
-          vAxis: { minValue: 60, maxValue: 100 }
-        };
-
-        var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
-        chart.draw(data, options);
-    }
-
-    // growth chart
-    google.charts.setOnLoadCallback(drawAnnotations);
-
-    function drawAnnotations() {
-
-          var data = google.visualization.arrayToDataTable([
-            ['City', 'Day-over-Day Case Growth %', {type: 'string', role: 'annotation'}],
-            ['Apr 1', 1, '+1%'],
-            ['Mar 31', 9.2, '+9.2%'],
-            ['Mar 30', 5.4, '+5.4%'],
-            ['Mar 29', 25.7, '+25.7%'],
-            ['Mar 28', 8.8, '+8.8%'],
-            ['Mar 27', 4.6, '+4.6%'],
-            ['Mar 26', 22.6, '+22.6%'],
-            ['Mar 25', 12.8, '+12.8%'],
-            ['Mar 24', 23.7, '+23.7%'],
-            ['Mar 23', 0, '+0%'],
-            ['Mar 22', 0, '+0%'],
-            ['Mar 21', 0, '+0%'],
-            ['Mar 20', 52, '+52%'],
-            ['Mar 19', 66.7, '+66.7%'],
-            ['Mar 18', 0, '0%'],
-            ['Mar 17', 36.4, '+36.4%'],
-            ['Mar 16', 0, '0%'],
-            ['Mar 15', 22.2, '+22.2%'],
-            ['Mar 14', 80, '+80%'],
-            ['Mar 13', 66.7, '+66.7%'],
-            ['Mar 12', 0, '0%'],
-            ['Mar 11', 0, '0%']
-          ]);
-
-          var options = {
-           title: 'Growth Rate of Marin County Confirmed Cases',
-           pointSize: 10,
-           legend: 'none',
-            series: {
-              0: { color: '#007bff' }
-            },
-            chartArea: {width: '50%'},
-            annotations: {
-              alwaysOutside: true,
-              textStyle: {
-                fontSize: 15,
-                auraColor: 'none',
-                color: '#007bff'
-              },
-              boxStyle: {
-                stroke: '#ccc',
-                strokeWidth: 2,
-                gradient: {
-                  color1: 'white',
-                  color2: 'white',
-                  x1: '0%', y1: '0%',
-                  x2: '100%', y2: '100%'
-                }
-              }
-            },
-            hAxis: {
-              title: 'Growth Rate (Lower = Better!!!)',
-              minValue: 0,
-            }
-          };
-          var chart = new google.visualization.BarChart(document.getElementById('growth_chart_div'));
-          chart.draw(data, options);
-        }
     </script>
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <style>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" type="text/css" href="css/main.css">
 
-      .body-headline {
-        text-align:center;
-        color: #007bff;
-        font-size: 22px;
-        margin-bottom:22px;
-        font-weight:500;
-      }
-
-      .body-style {
-        margin-left:0%;
-        margin-right:0%;
-        background-color:white;
-        color:black;
-      }
-
-      .text-center {
-        text-align:center;
-      }
-
-    </style>
   </head>
   <body class="body-style">
     <br><br>
@@ -172,7 +65,7 @@
       </div>
     </div>
 
-    <div class="text-center">Updated 4/1/2020 9 pm by <a href="http://www.twitter.com/xianke" target="_blank">@xianke</a> from data at <a href="https://coronavirus.marinhhs.org/" target="_blank">coronavirus.marinhhs.org</a>. Source code at <a href="https://github.com/xke/coronavirus-sf/" target="_blank">github.com/xke/coronavirus-sf</a>.</div>
+    <div class="text-center">Updated by <a href="http://www.twitter.com/xianke" target="_blank">@xianke</a> from data at <a href="https://coronavirus.marinhhs.org/" target="_blank">coronavirus.marinhhs.org</a>. Source code at <a href="https://github.com/xke/coronavirus-sf/" target="_blank">github.com/xke/coronavirus-sf</a>.</div>
     <br><br><br>
 
    <a name="signup"></a>
@@ -200,7 +93,7 @@
       </section>
 
     <div class="text-center">
-      <img src="people-fill.svg" alt="" width="32" height="32" style="margin-bottom:2px">
+      <img src="images/people-fill.svg" alt="" width="32" height="32" style="margin-bottom:2px">
       <a href="http://give2sf.org/">give2sf.org</a> to donate to SF's COVID-19 fund, or visit <a href="https://www.paypal.com/fundraiser/113352600784545158">paypal.com</a> to support national and global funds.</div>
     <br><br><br>
 
