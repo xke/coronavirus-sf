@@ -43,8 +43,9 @@
               ['Mar 28', 308, 4],
               ['Mar 29', 340, 5],
               ['Mar 30', 374, 6],
-              ['Mar 31', 397, 6]
-
+              ['Mar 31', 397, 6],
+              ['Apr 1', 434, 7],
+              ['Apr 2', 450, 7]
         ]);
 
         var options = {
@@ -67,7 +68,9 @@
     function drawAnnotations() {
 
           var data = google.visualization.arrayToDataTable([
-            ['City', 'Day-over-Day Case Growth %', {type: 'string', role: 'annotation'}],
+            ['Day', 'Day-over-Day Case Growth %', {type: 'string', role: 'annotation'}],
+            ['Apr 2', 3.7, '+3.7%'],
+            ['Apr 1', 9.3, '+9.3%'],
             ['Mar 31', 6.1, '+6.1%'],
             ['Mar 30', 10, '+10%'],
             ['Mar 29', 10.4, '+10.4%'],
@@ -172,7 +175,7 @@
     </div>
 
     <br>
-    <div class="text-center">Updated 3/31/2020 9 am by <a href="http://www.twitter.com/xianke"  target="_blank">@xianke</a> from data at <a href="https://www.sfdph.org/dph/alerts/coronavirus.asp" target="_blank">sfdph.org</a>. Source code at <a href="https://github.com/xke/coronavirus-sf/" target="_blank">github.com/xke/coronavirus-sf</a>.</div>
+    <div class="text-center">Updated 4/2/2020 10 am by <a href="http://www.twitter.com/xianke"  target="_blank">@xianke</a> from data at <a href="https://www.sfdph.org/dph/alerts/coronavirus.asp" target="_blank">sfdph.org</a>. Source code at <a href="https://github.com/xke/coronavirus-sf/" target="_blank">github.com/xke/coronavirus-sf</a>.</div>
 
     <br>
 
