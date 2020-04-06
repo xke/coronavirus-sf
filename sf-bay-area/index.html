@@ -23,7 +23,6 @@
 
     </script>
 
-
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <!-- Custom CSS -->
@@ -39,16 +38,15 @@
 
 
     <div class="button-links">
-      <a href="total.html" class="btn btn-lg btn-primary btn-block">6 Bay Area Counties (Total)</a>
+      <a href="/sf-bay-area/total.html" class="btn btn-lg btn-primary btn-block">6 Bay Area Counties (Total)</a>
     </div>
-    
+
     <iframe src="total.html#charts" class="iframe-chart" scrolling="no"></iframe>
 
     <div class="button-links">
       <a href="../index.html" class="btn btn-lg btn-primary btn-block">San Francisco City & County</a>
     </div>
     
-
     <iframe src="../index.html#charts" class="iframe-chart" scrolling="no"></iframe>
 
     <div class="button-links">
@@ -81,6 +79,13 @@
     </div>
 
     <iframe src="../marin-ca.html#charts" class="iframe-chart"  scrolling="no"></iframe>
+
+    <br><br>
+    <div class="text-center">
+      <img src="../images/leaf.svg" alt="" height="22" style="margin-bottom:4px">
+      Updated via <a href="https://www.groveflow.com" target="_blank">GroveFlow</a> from county data. 
+      Source code at <a href="https://github.com/xke/coronavirus-sf/" target="_blank">github.com/xke/coronavirus-sf</a>.
+    </div>
 
 
     <br><br><br>
@@ -119,7 +124,7 @@
 
     <script>
       // scroll to top:
-      window.onbeforeunload = function () {
+      window.onload = function () {
         window.scrollTo(0, 0);
       }
     </script>
