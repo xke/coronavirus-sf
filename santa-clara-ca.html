@@ -37,6 +37,8 @@
       google.charts.load("current", {packages:["corechart", "bar"]});
       google.charts.setOnLoadCallback(drawGrowthChart);
       google.charts.setOnLoadCallback(drawLineChart);
+      google.charts.setOnLoadCallback(drawGrowthChartD);
+      google.charts.setOnLoadCallback(drawLineChartD);
 
     </script>
 
@@ -60,6 +62,18 @@
         </div>
         <div class="col col-lg-2">
           <div id="chart_div" class="trend-chart"></div>
+        </div>
+
+      </div>
+    </div>
+    <br>
+    <div class="container">
+      <div class="row">
+        <div class="col col-sm-auto">
+          <div id="growth_chart_div_d" class="growth-chart"></div>
+        </div>
+        <div class="col col-lg-2">
+          <div id="chart_div_d" class="trend-chart"></div>
         </div>
 
       </div>

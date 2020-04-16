@@ -37,6 +37,8 @@
       google.charts.load("current", {packages:["corechart", "bar"]});
       google.charts.setOnLoadCallback(drawGrowthChart);
       google.charts.setOnLoadCallback(drawLineChart);
+      google.charts.setOnLoadCallback(drawGrowthChartD);
+      google.charts.setOnLoadCallback(drawLineChartD);
 
     </script>
 
@@ -65,7 +67,20 @@
 
       </div>
     </div>
+    <br>
+    <div class="container">
+      <div class="row">
+        <div class="col col-sm-auto">
+          <div id="growth_chart_div_d" class="growth-chart"></div>
+        </div>
+        <div class="col col-lg-2">
+          <div id="chart_div_d" class="trend-chart"></div>
+        </div>
 
+      </div>
+    </div>
+
+    <br>
     <div class="text-center">
       <img src="images/leaf.svg" alt="" height="22" style="margin-bottom:4px">
       Updated via <a href="https://www.groveflow.com" target="_blank">GroveFlow</a> from data at <a href="https://www.coronavirus.cchealth.org/" target="_blank">coronavirus.cchealth.org</a>. 
