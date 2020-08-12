@@ -26,20 +26,24 @@
 
     <!-- GroveFlow-enabled charts -->
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript" src="https://groveflow.com/js/growth-line-charts-from-sheets.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="https://covid-usa.groveflow.com/growth-line-charts-from-json.min.js"></script>
+    
     <script type="text/javascript">
       // coded by @xianke
       // for more info: github.com/xke/coronavirus-sf
       // contact hello@groveflow.com if you want to build a mission-critical dashboard!
 
+      FIPS_COUNTY_CODE = 51059; 
       LOCATION_NAME = "Fairfax County";
-      SPREADSHEET_URL = "https://docs.google.com/spreadsheet/tq?gid=2021914138&key=182k-itvuuVrsF9miuJeUiAjOVEFcaSJp_DhVvKgSoms";
+
+      JSON_FILE_PREFIX = "https://covid-usa-json.s3-us-west-1.amazonaws.com/" + FIPS_COUNTY_CODE;
 
       google.charts.load("current", {packages:["corechart", "bar"]});
       google.charts.setOnLoadCallback(drawGrowthChart);
       google.charts.setOnLoadCallback(drawLineChart);
-      google.charts.setOnLoadCallback(drawGrowthChartD);
-      google.charts.setOnLoadCallback(drawLineChartD);
+      google.charts.setOnLoadCallback(drawGrowthChartDeaths);
+      google.charts.setOnLoadCallback(drawLineChartDeaths);
 
     </script>
 
@@ -73,10 +77,10 @@
     <div class="container">
       <div class="row">
         <div class="col col-sm-auto">
-          <div id="growth_chart_div_d" class="growth-chart"></div>
+          <div id="growth_chart_deaths_div" class="growth-chart"></div>
         </div>
         <div class="col col-lg-2">
-          <div id="chart_div_d" class="trend-chart"></div>
+          <div id="chart_deaths_div" class="trend-chart"></div>
         </div>
 
       </div>
