@@ -33,8 +33,10 @@
       // for more info: github.com/xke/coronavirus-sf
       // contact hello@groveflow.com if you want to build a mission-critical dashboard!
 
-      LOCATION_NAME = "SF";
-      JSON_FILE_PREFIX = "https://coronavirus-sf-json.s3-us-west-1.amazonaws.com/san-francisco-ca";
+      FIPS_COUNTY_CODE = 6075; 
+      LOCATION_NAME = "San Francisco";
+
+      JSON_FILE_PREFIX = "https://covid-usa-json.s3-us-west-1.amazonaws.com/" + FIPS_COUNTY_CODE;
 
       google.charts.load("current", {packages:["corechart", "bar"]});
       google.charts.setOnLoadCallback(drawGrowthChart);
